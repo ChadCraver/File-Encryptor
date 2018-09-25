@@ -256,6 +256,8 @@ Public Class frmFileEncryptor
         Else
             MsgBox("Your passwords don't match!", vbOKOnly + vbCritical, "Password Don't Match")
         End If
+
+        ResetForm()
     End Sub
 
     Private Sub btnDecryptFile_Click(sender As Object, e As EventArgs) Handles btnDecryptFile.Click
@@ -288,5 +290,18 @@ Public Class frmFileEncryptor
         Else
             MsgBox("Your passwords don't match!", vbOKOnly + vbCritical, "Password Don't Match")
         End If
+
+        ResetForm()
+    End Sub
+
+    Private Sub ResetForm()
+        txtDecryptFileDestination.Text = ""
+        txtDecryptPassword1.Text = ""
+        txtDecryptPassword2.Text = ""
+        txtEncryptFileDestination.Text = ""
+        txtEncryptPassword1.Text = ""
+        txtEncryptPassword2.Text = ""
+        txtFileToDecrypt.Text = ""
+        txtFileToEncrypt.Text = ""
     End Sub
 End Class
