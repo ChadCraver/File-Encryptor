@@ -36,8 +36,10 @@ Partial Class frmFileEncryptor
         Me.btnBrowseEncrypt = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.chkDeleteFileAfterEncryption = New System.Windows.Forms.CheckBox()
         Me.btnEncryptFile = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.chkDeleteFileAfterDecryption = New System.Windows.Forms.CheckBox()
         Me.btnDecryptFile = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -48,8 +50,6 @@ Partial Class frmFileEncryptor
         Me.txtFileToDecrypt = New System.Windows.Forms.TextBox()
         Me.txtDecryptFileDestination = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.chkDeleteFileAfterEncryption = New System.Windows.Forms.CheckBox()
-        Me.chkDeleteFileAfterDecryption = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -69,7 +69,7 @@ Partial Class frmFileEncryptor
         Me.txtEncryptFileDestination.Name = "txtEncryptFileDestination"
         Me.txtEncryptFileDestination.ReadOnly = True
         Me.txtEncryptFileDestination.Size = New System.Drawing.Size(259, 20)
-        Me.txtEncryptFileDestination.TabIndex = 0
+        Me.txtEncryptFileDestination.TabIndex = 2
         '
         'txtEncryptPassword1
         '
@@ -77,7 +77,7 @@ Partial Class frmFileEncryptor
         Me.txtEncryptPassword1.Name = "txtEncryptPassword1"
         Me.txtEncryptPassword1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtEncryptPassword1.Size = New System.Drawing.Size(260, 20)
-        Me.txtEncryptPassword1.TabIndex = 0
+        Me.txtEncryptPassword1.TabIndex = 3
         '
         'txtEncryptPassword2
         '
@@ -85,7 +85,7 @@ Partial Class frmFileEncryptor
         Me.txtEncryptPassword2.Name = "txtEncryptPassword2"
         Me.txtEncryptPassword2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtEncryptPassword2.Size = New System.Drawing.Size(260, 20)
-        Me.txtEncryptPassword2.TabIndex = 0
+        Me.txtEncryptPassword2.TabIndex = 4
         '
         'Label1
         '
@@ -139,7 +139,7 @@ Partial Class frmFileEncryptor
         Me.btnBrowseEncrypt.Location = New System.Drawing.Point(291, 3)
         Me.btnBrowseEncrypt.Name = "btnBrowseEncrypt"
         Me.btnBrowseEncrypt.Size = New System.Drawing.Size(75, 23)
-        Me.btnBrowseEncrypt.TabIndex = 7
+        Me.btnBrowseEncrypt.TabIndex = 1
         Me.btnBrowseEncrypt.Text = "Browse"
         Me.btnBrowseEncrypt.UseVisualStyleBackColor = True
         '
@@ -174,12 +174,24 @@ Partial Class frmFileEncryptor
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Encrypt"
         '
+        'chkDeleteFileAfterEncryption
+        '
+        Me.chkDeleteFileAfterEncryption.AutoSize = True
+        Me.chkDeleteFileAfterEncryption.Checked = True
+        Me.chkDeleteFileAfterEncryption.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkDeleteFileAfterEncryption.Location = New System.Drawing.Point(9, 126)
+        Me.chkDeleteFileAfterEncryption.Name = "chkDeleteFileAfterEncryption"
+        Me.chkDeleteFileAfterEncryption.Size = New System.Drawing.Size(188, 17)
+        Me.chkDeleteFileAfterEncryption.TabIndex = 5
+        Me.chkDeleteFileAfterEncryption.Text = "Delete original file after encryption."
+        Me.chkDeleteFileAfterEncryption.UseVisualStyleBackColor = True
+        '
         'btnEncryptFile
         '
         Me.btnEncryptFile.Location = New System.Drawing.Point(291, 120)
         Me.btnEncryptFile.Name = "btnEncryptFile"
         Me.btnEncryptFile.Size = New System.Drawing.Size(75, 23)
-        Me.btnEncryptFile.TabIndex = 8
+        Me.btnEncryptFile.TabIndex = 6
         Me.btnEncryptFile.Text = "Encrypt"
         Me.btnEncryptFile.UseVisualStyleBackColor = True
         '
@@ -204,12 +216,24 @@ Partial Class frmFileEncryptor
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Decrypt"
         '
+        'chkDeleteFileAfterDecryption
+        '
+        Me.chkDeleteFileAfterDecryption.AutoSize = True
+        Me.chkDeleteFileAfterDecryption.Checked = True
+        Me.chkDeleteFileAfterDecryption.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkDeleteFileAfterDecryption.Location = New System.Drawing.Point(7, 125)
+        Me.chkDeleteFileAfterDecryption.Name = "chkDeleteFileAfterDecryption"
+        Me.chkDeleteFileAfterDecryption.Size = New System.Drawing.Size(202, 17)
+        Me.chkDeleteFileAfterDecryption.TabIndex = 12
+        Me.chkDeleteFileAfterDecryption.Text = "Delete encrypted file after decryption."
+        Me.chkDeleteFileAfterDecryption.UseVisualStyleBackColor = True
+        '
         'btnDecryptFile
         '
         Me.btnDecryptFile.Location = New System.Drawing.Point(291, 119)
         Me.btnDecryptFile.Name = "btnDecryptFile"
         Me.btnDecryptFile.Size = New System.Drawing.Size(75, 23)
-        Me.btnDecryptFile.TabIndex = 17
+        Me.btnDecryptFile.TabIndex = 13
         Me.btnDecryptFile.Text = "Decrypt"
         Me.btnDecryptFile.UseVisualStyleBackColor = True
         '
@@ -237,7 +261,7 @@ Partial Class frmFileEncryptor
         Me.txtDecryptPassword2.Name = "txtDecryptPassword2"
         Me.txtDecryptPassword2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtDecryptPassword2.Size = New System.Drawing.Size(260, 20)
-        Me.txtDecryptPassword2.TabIndex = 13
+        Me.txtDecryptPassword2.TabIndex = 11
         '
         'txtDecryptPassword1
         '
@@ -245,7 +269,7 @@ Partial Class frmFileEncryptor
         Me.txtDecryptPassword1.Name = "txtDecryptPassword1"
         Me.txtDecryptPassword1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtDecryptPassword1.Size = New System.Drawing.Size(260, 20)
-        Me.txtDecryptPassword1.TabIndex = 14
+        Me.txtDecryptPassword1.TabIndex = 10
         '
         'Label5
         '
@@ -261,7 +285,7 @@ Partial Class frmFileEncryptor
         Me.btnBrowseDecrypt.Location = New System.Drawing.Point(291, 3)
         Me.btnBrowseDecrypt.Name = "btnBrowseDecrypt"
         Me.btnBrowseDecrypt.Size = New System.Drawing.Size(75, 23)
-        Me.btnBrowseDecrypt.TabIndex = 12
+        Me.btnBrowseDecrypt.TabIndex = 8
         Me.btnBrowseDecrypt.Text = "Browse"
         Me.btnBrowseDecrypt.UseVisualStyleBackColor = True
         '
@@ -271,7 +295,7 @@ Partial Class frmFileEncryptor
         Me.txtFileToDecrypt.Name = "txtFileToDecrypt"
         Me.txtFileToDecrypt.ReadOnly = True
         Me.txtFileToDecrypt.Size = New System.Drawing.Size(179, 20)
-        Me.txtFileToDecrypt.TabIndex = 8
+        Me.txtFileToDecrypt.TabIndex = 7
         '
         'txtDecryptFileDestination
         '
@@ -289,30 +313,6 @@ Partial Class frmFileEncryptor
         Me.Label6.Size = New System.Drawing.Size(80, 13)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "File destination:"
-        '
-        'chkDeleteFileAfterEncryption
-        '
-        Me.chkDeleteFileAfterEncryption.AutoSize = True
-        Me.chkDeleteFileAfterEncryption.Checked = True
-        Me.chkDeleteFileAfterEncryption.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkDeleteFileAfterEncryption.Location = New System.Drawing.Point(9, 126)
-        Me.chkDeleteFileAfterEncryption.Name = "chkDeleteFileAfterEncryption"
-        Me.chkDeleteFileAfterEncryption.Size = New System.Drawing.Size(188, 17)
-        Me.chkDeleteFileAfterEncryption.TabIndex = 9
-        Me.chkDeleteFileAfterEncryption.Text = "Delete original file after encryption."
-        Me.chkDeleteFileAfterEncryption.UseVisualStyleBackColor = True
-        '
-        'chkDeleteFileAfterDecryption
-        '
-        Me.chkDeleteFileAfterDecryption.AutoSize = True
-        Me.chkDeleteFileAfterDecryption.Checked = True
-        Me.chkDeleteFileAfterDecryption.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkDeleteFileAfterDecryption.Location = New System.Drawing.Point(7, 125)
-        Me.chkDeleteFileAfterDecryption.Name = "chkDeleteFileAfterDecryption"
-        Me.chkDeleteFileAfterDecryption.Size = New System.Drawing.Size(202, 17)
-        Me.chkDeleteFileAfterDecryption.TabIndex = 18
-        Me.chkDeleteFileAfterDecryption.Text = "Delete encrypted file after decryption."
-        Me.chkDeleteFileAfterDecryption.UseVisualStyleBackColor = True
         '
         'frmFileEncryptor
         '
